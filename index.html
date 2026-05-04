@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Network Host System</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #0f172a;
+      color: white;
+      text-align: center;
+      padding: 30px;
+    }
+
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      border-radius: 8px;
+      border: none;
+    }
+
+    button {
+      background: #22c55e;
+      color: white;
+      cursor: pointer;
+    }
+
+    .box {
+      margin-top: 20px;
+      background: #1e293b;
+      padding: 15px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>🌐 Network Host System</h1>
+
+<input type="text" id="host" placeholder="Enter host (example.com)">
+<br>
+<button onclick="generate()">Generate</button>
+
+<div class="box" id="output">Result will appear here</div>
+
+<script>
+function generate() {
+  let host = document.getElementById("host").value;
+
+  if (!host) {
+    alert("Please enter a host");
+    return;
+  }
+
+  document.getElementById("output").innerHTML =
+    "Host: " + host + "<br>" +
+    "SNI: " + host + "<br>" +
+    "Payload: GET / HTTP/1.1 Host: " + host;
+}
+</script>
+
+</body>
+                              </html>
